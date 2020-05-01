@@ -1,0 +1,226 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+/* @font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Regular.eot?#iefix) format('embedded-opentype'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Regular.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Bold.eot?#iefix) format('embedded-opentype'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Bold.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Bold.ttf) format('truetype');
+} */
+
+ :root{
+  --light-green:#00b593;
+}
+.btn-color{
+  background: var(--light-green);
+  color: #fff;
+}
+.custom-btn{
+  padding: 5px;
+  width: 140px;
+  background: var(--light-green);
+  color: #f8f8f8;
+  border:none;
+}
+button a{
+  text-decoration: none;
+  color: #fff !important;
+}
+button a:hover{
+  text-decoration: none;
+  color: #fff !important;
+}
+body {
+  overflow-x: hidden;
+  font-family: janna lt;
+  direction: rtl;
+  /* font-family: 'Droid Arabic Kufi'; */
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-right: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+.border-right {
+    border-left: 1px solid #dee2e6!important;
+}
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  background: var(--light-green);
+  color: #f8f8f8;
+}
+.sub-menu{
+  padding-right: 0;
+  background: var(--light-green) !important;
+  color: #f8f8f8;
+}
+.sub-menu a {
+  background: var(--light-green) !important;
+  color: #f8f8f8;
+}
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+#sidebar-wrapper .list-group .list-group-item.active{
+  background: var(--light-green)!important;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+#page-content-wrapper .btn-primary {
+    background-color: var(--light-green) !important;
+    border-color: var(--light-green);
+}
+#page-content-wrapper .btn-primary a{
+  color: #f8f8f8;
+  text-decoration: none;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-right: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-right: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+    background: #f8f8f8;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-right: -15rem;
+  }
+}
+
+/* Profile */
+.profile{
+  margin: 50px 0;
+}/* TODO: complete designig photo */
+.profile-img{
+  margin-bottom: 50px;
+  background: #fff;
+  border: 1px solid #EEE;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+.profile-img .profile-img-thumb img{
+  height: auto;
+  border-radius: 50%;
+  max-width: 150px;
+  max-height: 150px;
+  margin: 20px 0;
+}
+.profile-details{
+  background: #fff;
+  border: 1px solid #EEE;
+  border-radius: 5px;
+  padding: 10px;
+}
+/* Add new post page */
+.new-post{
+  margin: 30px 0;
+}
+/* Add new post page */
+
+/* All posts page */
+.all-posts{
+  margin: 30px 0;
+}
+.all-posts .posts-head{
+  background: var(--light-green);
+  color: #f8f8f8;
+  padding: 15px;
+  border-radius: 3px;
+  width: 95%;
+  margin: auto;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(156,39,176,.4);
+  margin-bottom: -35px;
+  position: relative;
+  z-index: 3 !important;
+}
+.posts-board{
+  background: #fff;
+  padding: 10px;
+  padding-top: 50px;
+  border: 1px solid #EEE;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  position: relative;
+}
+.table thead th {
+    border-bottom: 1px solid #dee2e6;
+}
+/* All posts page */
+
+/* index page */
+.statistics{
+  margin: 30px 0;
+  text-align: center;
+}
+.status{
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #EEE;
+  border-radius: 3px;
+}
+/* index page */
+
+/* Tasks Page */
+.tasks{
+  margin: 30px 0;
+}
+.tasks .show-tasks{
+  margin: 30px 0;
+}
+.tasks-head{
+  background: var(--light-green);
+  color: #f8f8f8;
+  padding: 15px;
+  border-radius: 3px;
+  width: 95%;
+  margin: auto;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(156,39,176,.4);
+  margin-bottom: -35px;
+  position: relative;
+  z-index: 3 !important;
+}
+.tasks .show-tasks form{
+  background: #fff;
+  padding: 10px;
+  padding-top: 50px;
+  border: 1px solid #EEE;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  position: relative;
+}
+.tasks .show-tasks ul{
+  list-style: none;
+}
+.tasks .show-tasks ul li{
+  display: inline-block;
+  padding: 10px;
+}
