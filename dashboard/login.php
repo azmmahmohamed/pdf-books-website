@@ -1,3 +1,13 @@
+<?php 
+    session_start();
+    include 'include/connection.php';
+    // check if session isset
+    if(isset($_SESSION['adminInfo'])){
+        header('Location:dashboard.php');
+    }
+    else{
+        
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,20 +48,51 @@
 <body>
 
   <div class="login">
-    <form>
+<!-- Log to dashboard  -->
+   <?php 
+        if(isset($_POST['log']))  {
+            $adminInfo = $_POST['adminInfo'];
+            $adminPass = $_POST['password'];
+            
+            //check if inputs are not empty
+            if(empty($adminInfo) || empty($adminPass)){
+                echo "<div class='alert alert-danger'>" . "الرجاء مل الحقول أدناه" . "</div>";
+            }
+            // check if values are match
+            else{
+                $query = "SELECT * FROM admin WHERE (adminName='$adminInfo' OR adminEmail='$adminInfo') AND adminPass='$adminPass '";
+                $result = mysqli_query($con,$query);
+                $row = mysqli_num_rows($result);
+                
+                if($row > 0){
+                    $_SESSION['adminInfo'] = $adminInfo;
+                    header('Location:dashboard.php');
+                }
+                else{
+                    echo "<div class='alert alert-danger'>" . "البيانات غير متطابقة الرجاء المحاولة مرة أخرى" . "</div>";
+                }
+            }
+        }
+    ?>
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
       <h5>تسجيل الدخول</h5>
       <div class="form-group">
         <label for="mail"> إسم المستخدم أو البريد الإلكتروني</label>
-        <input type="text" class="form-control"  id="mail"/>
+        <input type="text" class="form-control"  id="mail" name="adminInfo"/>
       </div>
       <div class="form-group">
         <label for="pass">كلمة السر</label>
-        <input type="password" class="form-control"  id="pass"/>
+        <input type="password" class="form-control"  id="pass" name="password"/>
       </div>
-      <button class="custom-btn">تسجيل الدخول</button>
+      <button class="custom-btn" name="log">تسجيل الدخول</button>
     </form>
   </div>
 
   <?php
     include 'include/footer.php';
   ?>
+
+
+<?php
+    }
+?>

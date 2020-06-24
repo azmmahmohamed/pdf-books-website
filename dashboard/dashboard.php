@@ -1,5 +1,13 @@
 <?php
+    session_start();
+    include 'include/connection.php';
     include 'include/header.php';
+    if(!isset($_SESSION['adminInfo'])){
+        header('Location:index.php');
+    }
+else{
+    
+
   ?>
 
     <!-- /#sidebar-wrapper -->
@@ -16,3 +24,8 @@
 <?php
   include 'include/footer.php';
  ?>
+
+
+<?php 
+    }
+?>

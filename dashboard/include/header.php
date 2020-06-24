@@ -48,7 +48,12 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <!-- Show user Name  -->
-          إسم المستخدم
+          <?php 
+               $query = "SELECT adminName FROM admin";
+                $result = mysqli_query($con,$query);
+                $row = mysqli_fetch_assoc($result);
+                echo $row['adminName'];
+          ?>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="logout.php">تسجيل الخروج</a>
