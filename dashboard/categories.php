@@ -15,18 +15,7 @@ else{
     <!-- Page Content -->
 
   <div class="container-fluid">
-    <!-- Start add category -->
-    <div class="categories">
-        <form>
-          <div class="form-group">
-               <label for="cat">إضافة تصنيف</label>
-                <input type="text" id="cat" class="form-control"/>
-            </div>
-            <button class="custom-btn">إضافة</button>
-        </form>
-        
-    </div>
-    <!-- End add category -->
+
   </div>
     <!-- /#page-content-wrapper -->
 
