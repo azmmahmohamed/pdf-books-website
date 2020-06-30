@@ -1,4 +1,8 @@
+<<<<<<< HEAD
  :root{
+=======
+:root{
+>>>>>>> 580392f62058dd5469618d459268d7d321a21365
   --light-green:#00b593;
 }
 a:hover{
@@ -99,6 +103,7 @@ body {
 .profile{
   margin: 50px 0;
 }
+<<<<<<< HEAD
 /* Start categories page */
 .categories{
     margin-top: 30px;
@@ -124,3 +129,5 @@ body {
 /* End edit category page */
 
 
+=======
+>>>>>>> 580392f62058dd5469618d459268d7d321a21365
