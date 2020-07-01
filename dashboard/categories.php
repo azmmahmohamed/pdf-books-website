@@ -42,7 +42,6 @@ if (!isset($_SESSION['adminInfo'])) {
   ?>
 
   <div class="container-fluid">
-<<<<<<< HEAD
     <!-- Start categories section -->
     <div class="categories">
       <?php
@@ -99,9 +98,6 @@ if (!isset($_SESSION['adminInfo'])) {
       </div>
     </div>
     <!-- End categories section -->
-=======
-
->>>>>>> 580392f62058dd5469618d459268d7d321a21365
   </div>
   <!-- /#page-content-wrapper -->
 
@@ -110,9 +106,6 @@ if (!isset($_SESSION['adminInfo'])) {
   <?php
   include 'include/footer.php';
   ?>
-
-
-<<<<<<< HEAD
 <?php
 }
 ?>
@@ -120,4 +113,3 @@ if (!isset($_SESSION['adminInfo'])) {
 <?php 
     }
 ?>
->>>>>>> 580392f62058dd5469618d459268d7d321a21365
