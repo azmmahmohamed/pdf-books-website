@@ -42,6 +42,7 @@ if (!isset($_SESSION['adminInfo'])) {
   ?>
 
   <div class="container-fluid">
+    <!-- Start categories section -->
     <div class="categories">
       <?php
       if (isset($catErro)) {
