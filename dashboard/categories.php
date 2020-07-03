@@ -74,7 +74,14 @@ if (!isset($_SESSION['adminInfo'])) {
           <tbody>
             <!-- Fetch categories from database -->
             <?php
-            $query = "SELECT * FROM categories ORDER BY id DESC";
+            if (isset($_GET['page'])) {
+              $page = $_GET['page'];
+            } else {
+              $page = 1;
+            }
+            $limit = 4;
+            $start = ($page - 1) * $limit;
+            $query = "SELECT * FROM categories ORDER BY id DESC LIMIT $start, $limit";
             $res = mysqli_query($con, $query);
             $sNo = 0;
             while ($row = mysqli_fetch_assoc($res)) {
@@ -87,7 +94,7 @@ if (!isset($_SESSION['adminInfo'])) {
                 <td><?php echo $row['categoryDate']; ?></td>
                 <td>
                   <a href="edit-cat.php?id=<?php echo $row['id']; ?>" class="custom-btn">تعديل</a>
-                  <a href="categories.php?id=<?php echo $row['id']; ?>" class="custom-btn">حذف</a>
+                  <a href="categories.php?id=<?php echo $row['id']; ?>" class="custom-btn confirm">حذف</a>
                 </td>
               </tr>
             <?php
@@ -95,6 +102,39 @@ if (!isset($_SESSION['adminInfo'])) {
             ?>
           </tbody>
         </table>
+        <!-- Start pagination -->
+        <?php
+        $query = "SELECT * FROM categories";
+        $result = mysqli_query($con, $query);
+        $total_cat = mysqli_num_rows($result);
+        $total_pages = ceil($total_cat / $limit);
+        ?>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="categories.php?page=<?php if (($page - 1) > 0) {
+                                                                                    echo  $page - 1;
+                                                                                  } else {
+                                                                                    echo 1;
+                                                                                  }
+
+                                                                                  ?>">السابق</a></li>
+            <?php
+            for ($i = 1; $i <= $total_pages; $i++) {
+            ?>
+              <li class="page-item"><a class="page-link" href="categories.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+            <?php
+            }
+            ?>
+            <li class="page-item"><a class="page-link" href="categories.php?page=<?php
+                                                                                  if (($page + 1) < $total_pages) {
+                                                                                    echo $page + 1;
+                                                                                  } elseif (($page + 1) >= $total_pages) {
+                                                                                    echo $total_pages;
+                                                                                  }
+                                                                                  ?>">التالي</a></li>
+          </ul>
+        </nav>
+        <!-- End pagination -->
       </div>
     </div>
     <!-- End categories section -->
